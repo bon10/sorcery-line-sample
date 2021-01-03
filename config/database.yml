@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: sorecery_production
-  username: app
+  username: sorecery_user
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
