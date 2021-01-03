@@ -222,7 +222,7 @@ Rails.application.config.sorcery.configure do |config|
 
   config.line.key = ENV.fetch("LINE_KEY") { 'test' }
   config.line.secret = ENV.fetch("LINE_SECRET") { 'test' }
-  config.line.callback_url = "http://localhost:3000/oauth/callback?provider=line"
+  config.line.callback_url = ENV.fetch("LINE_CALL_BACK") { 'http://localhost:3000/oauth/callback?provider=line' }
   # emailを取得する場合は以下
   # config.line.scope = "profile openid email"
   config.line.scope = "profile openid"
